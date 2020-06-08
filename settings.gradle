@@ -1,0 +1,2 @@
+rootProject.name='SiaTask'
+include ':app'
