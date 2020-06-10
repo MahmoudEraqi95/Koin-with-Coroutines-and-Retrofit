@@ -17,16 +17,17 @@ class ChatbotAdapter (var context:Context):RecyclerView.Adapter<ChatbotAdapter.C
     var onAnswerClicked:((String, Int)->Unit)? = null
 
 
-    init {
-        println("adapter started")
-    }
+
 
     var question = ArrayList<String>()
 
     fun addQuestion(i:Int){
-        question.add(Constants.questions[i])
+            if (question.size<Constants.questions.size && i != question.size-1) {
+                question.add(Constants.questions[i])
 
-        notifyItemInserted(i)
+                notifyItemInserted(i)
+            }
+
     }
 
     override fun onCreateViewHolder(
@@ -41,15 +42,33 @@ class ChatbotAdapter (var context:Context):RecyclerView.Adapter<ChatbotAdapter.C
     }
 
     override fun onBindViewHolder(holder: ChatbotAdapter.ChatbotViewHolder, position: Int) {
-       holder.question.setText(question[position])
-       holder.answers.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, true)
-       var answersAdapter = AnswersAdapter(context, Constants.answers[position], position+1)
-       holder.answers.adapter = answersAdapter
-       answersAdapter.onItemClick = {
-          answer, nextPosition-> onAnswerClicked!!.invoke(answer, nextPosition)
-       }
+            if (question.size<=Constants.questions.size) {
+                holder.question.setText(question[position])
+                holder.answers.layoutManager =
+                    LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, true)
 
-    }
+
+                var answersAdapter =
+                    AnswersAdapter(context, Constants.answers[position], position + 1)
+
+                holder.answers.adapter = answersAdapter
+                answersAdapter.onItemClick = {
+
+                        answer, nextPosition ->
+                    kotlin.run {
+
+                            onAnswerClicked!!.invoke(answer, nextPosition)
+                    }
+
+
+                }
+            }
+
+        println("questions size:"+ question.size)
+
+
+
+     }
 
     class ChatbotViewHolder (var v: View):RecyclerView.ViewHolder(v){
 

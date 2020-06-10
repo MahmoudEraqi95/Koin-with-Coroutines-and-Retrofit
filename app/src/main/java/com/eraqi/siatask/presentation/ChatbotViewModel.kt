@@ -16,10 +16,12 @@ class ChatbotViewModel(var tag:String,var order:String, var sort:String, var pag
 
 
 
-    var resultMutableLiveData = MutableLiveData<Result>()
+    var resultMutableLiveData:MutableLiveData<Result>
 
         init {
+            resultMutableLiveData = MutableLiveData<Result>()
             getResults()
+
         }
 
 
@@ -28,6 +30,7 @@ class ChatbotViewModel(var tag:String,var order:String, var sort:String, var pag
         CoroutineScope(IO).launch{
             resultMutableLiveData.postValue(stackRepo.searchRemote(tag, order, sort, pageSize))
         }
+
       }
 
 

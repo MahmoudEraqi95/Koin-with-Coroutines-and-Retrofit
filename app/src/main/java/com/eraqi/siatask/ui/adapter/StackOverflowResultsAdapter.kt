@@ -30,7 +30,7 @@ class StackOverflowResultsAdapter(val context:Context, val items:List<Item>): Re
         var item = items.get(position)
       holder.userName.setText(item.owner.displayName)
         holder.questionTitle.setText(item.title)
-        holder.tags.setText(item.tags.asIterable().forEach { item->item+"," }.toString())
+        holder.tags.setText(item.tags.toString())
     }
     class StackOverflowResultViewHolder(val v: View) :RecyclerView.ViewHolder(v){
         var userName = v.findViewById<TextView>(R.id.tv_username)

@@ -7,9 +7,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.eraqi.siatask.R
-import com.eraqi.siatask.data.callback.ChatAnswerClickListner
+import com.eraqi.siatask.data.Constants
 
- class AnswersAdapter(var c:Context, var answers:List<String>, val nextQuestion:Int):RecyclerView.Adapter<AnswersAdapter.AnswersViewHolder>() {
+
+class AnswersAdapter(var c:Context, var answers:List<String>, val nextQuestion:Int):RecyclerView.Adapter<AnswersAdapter.AnswersViewHolder>() {
 
      var onItemClick: ((String, Int) -> Unit)? = null
 
@@ -25,12 +26,15 @@ import com.eraqi.siatask.data.callback.ChatAnswerClickListner
     }
 
     override fun onBindViewHolder(holder: AnswersAdapter.AnswersViewHolder, position: Int) {
-      holder.answerText.setText(answers[position])
-      holder.answerText.setOnClickListener({
 
-       onItemClick!!.invoke(holder.answerText.text.toString(), nextQuestion)
+            holder.answerText.setText(answers[position])
+            holder.answerText.setOnClickListener({
 
-      })
+                onItemClick!!.invoke(holder.answerText.text.toString(), nextQuestion)
+
+
+            })
+
     }
 
     class AnswersViewHolder(var v:View) :RecyclerView.ViewHolder(v){
