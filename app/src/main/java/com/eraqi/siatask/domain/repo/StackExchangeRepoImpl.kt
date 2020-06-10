@@ -12,6 +12,10 @@ import java.io.IOError
 import java.io.IOException
 
 
+/**
+ * this class is responsible for fetching the data from the datasource which could be a local database or remote data
+ * in our case it's remote data so it calls the api using retrofit and sends the data to the viewmodel class
+ */
 class StackExchangeRepoImpl:StackExhangeRepo, KoinComponent {
     override suspend fun searchRemote(
         tag: String,

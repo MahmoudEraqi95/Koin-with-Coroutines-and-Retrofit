@@ -1,7 +1,7 @@
 package com.eraqi.siatask.data.repo
 
 import com.eraqi.siatask.Result
-import com.eraqi.siatask.data.model.StackExchangeResponse
+
 
 interface StackExhangeRepo {
 

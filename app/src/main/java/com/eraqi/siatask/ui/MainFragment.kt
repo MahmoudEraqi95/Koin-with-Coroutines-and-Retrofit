@@ -9,7 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 
 import com.eraqi.siatask.R
-
+/**
+ * this class represents the first screen that appears after the splash, it just contain a button that navigates you to the chatbot screen
+ */
 class MainFragment :Fragment(){
 
     override fun onCreateView(

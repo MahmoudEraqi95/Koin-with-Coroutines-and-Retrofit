@@ -18,5 +18,12 @@
         <action
             android:id="@+id/action_chatbotFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_chatbotFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/resultsFragment"
+        android:name="com.eraqi.siatask.ui.ResultsFragment"
+        android:label="ResultsFragment" />
 </navigation>

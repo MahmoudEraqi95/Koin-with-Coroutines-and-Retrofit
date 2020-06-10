@@ -1,5 +1,8 @@
 package com.eraqi.siatask.data
 
+/**
+* this class contains most of the constants that we might use in different classes in our app
+ */
 class Constants {
    companion object {
        val BASE_URL = "https://api.stackexchange.com/2.2/"

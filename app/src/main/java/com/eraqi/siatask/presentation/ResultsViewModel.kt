@@ -10,7 +10,13 @@ import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
 
-class ChatbotViewModel(var tag:String,var order:String, var sort:String, var pageSize:String) : ViewModel(), KoinComponent {
+
+/**
+ * this class is responsible fetching the data from repository, whether it's from local database or from server and present it to
+ * the ResultFragment class by making the ResultFragment class observes the resultMutableLiveData object
+ * it also handles the lifecycle of the activity
+ */
+class ResultsViewModel(var tag:String, var order:String, var sort:String, var pageSize:String) : ViewModel(), KoinComponent {
 
     val stackRepo = StackExchangeRepoImpl()
 

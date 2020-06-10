@@ -7,9 +7,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.eraqi.siatask.R
-import com.eraqi.siatask.data.Constants
 
 
+
+/**
+* this class is responsible for adapting the data of the suggested answers to a TextView
+ * it's functions are the same as StackOverflowResultsAdapter class, you can check the docs there if you haven't
+ */
 class AnswersAdapter(var c:Context, var answers:List<String>, val nextQuestion:Int):RecyclerView.Adapter<AnswersAdapter.AnswersViewHolder>() {
 
      var onItemClick: ((String, Int) -> Unit)? = null

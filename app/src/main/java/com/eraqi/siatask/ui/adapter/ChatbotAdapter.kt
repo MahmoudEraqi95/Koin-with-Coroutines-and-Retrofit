@@ -13,6 +13,10 @@ import com.eraqi.siatask.data.Constants
 import com.eraqi.siatask.data.model.Item
 import java.util.zip.Inflater
 
+/**
+ * this class is responsible for adapting the questions of and the suggested answers to the view
+ * it's function are the same as StackOverflowResultsAdapter class, you can check the docs there if you haven't.
+ */
 class ChatbotAdapter (var context:Context):RecyclerView.Adapter<ChatbotAdapter.ChatbotViewHolder>(){
     var onAnswerClicked:((String, Int)->Unit)? = null
 
