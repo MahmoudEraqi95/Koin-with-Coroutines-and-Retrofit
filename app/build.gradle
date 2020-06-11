@@ -77,4 +77,8 @@ dependencies {
     //navigation
     implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
+
+    //mockito
+    implementation 'org.mockito:mockito-core:3.3.3'
+
 }

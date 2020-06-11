@@ -75,7 +75,7 @@ class ResultsFragment: Fragment() {
                     Toast.makeText(context,  "Questions' Size: "+(it.data as StackExchangeResponse).items.size, Toast.LENGTH_LONG).show()
                     resultAdapter = StackOverflowResultsAdapter(
                         requireContext(),
-                        (it.data as StackExchangeResponse).items
+                        it.data.items
                     )
                     questionRecyclerView.adapter = resultAdapter
                 }

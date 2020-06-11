@@ -26,7 +26,9 @@ class AnswersAdapter(var c:Context, var answers:List<String>, val nextQuestion:I
     }
 
     override fun getItemCount(): Int {
+
         return answers.size
+
     }
 
     override fun onBindViewHolder(holder: AnswersAdapter.AnswersViewHolder, position: Int) {
@@ -36,7 +38,6 @@ class AnswersAdapter(var c:Context, var answers:List<String>, val nextQuestion:I
 
                 onItemClick!!.invoke(holder.answerText.text.toString(), nextQuestion)
 
-
             })
 
     }
@@ -44,14 +45,6 @@ class AnswersAdapter(var c:Context, var answers:List<String>, val nextQuestion:I
     class AnswersViewHolder(var v:View) :RecyclerView.ViewHolder(v){
 
         var answerText = v.findViewById<TextView>(R.id.tv_suggested_answer)
-
-
-       /* fun <T : RecyclerView.ViewHolder> T.listen(event: (answer: String, nextPosition: Int) -> Unit): T {
-            answerText.setOnClickListener {
-                event.invoke(answerText.text.toString(), )
-            }
-            return this
-        }*/
 
     }
 
