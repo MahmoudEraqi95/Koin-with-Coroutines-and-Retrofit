@@ -15,13 +15,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setActionBar()
+        setUpActionBar()
     }
     /**
      *this function sets up the action bar for the activity and makes the back button visible and clickable
      * @return Nothing.
      */
-    fun setActionBar(){
+    fun setUpActionBar(){
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeButtonEnabled(true)

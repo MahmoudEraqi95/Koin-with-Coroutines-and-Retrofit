@@ -4,8 +4,6 @@ package com.eraqi.siatask.di
 
 import com.eraqi.siatask.data.Constants
 import com.eraqi.siatask.data.remote.StackExcahngeApi
-import com.eraqi.siatask.data.repo.StackExhangeRepo
-import com.eraqi.siatask.domain.repo.StackExchangeRepoImpl
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
@@ -20,7 +18,7 @@ import java.util.concurrent.TimeUnit
  */
 val module = module{
 
-    single { createOkHttpClientInstancee() }
+    single { createOkHttpClientInstance() }
     single { createRetrofitClientInstance(get(), Constants.BASE_URL) }
     single { creatStackExchangeApiInstance(get())}
 
@@ -31,7 +29,7 @@ val module = module{
 *this function creates an instance of the OkHttpclient to handle the timeout reading, writing,and connecting time, and logs all the details
  * about requests
  */
-fun createOkHttpClientInstancee(): OkHttpClient {
+fun createOkHttpClientInstance(): OkHttpClient {
     val httpLoggingInterceptor = HttpLoggingInterceptor()
     httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
     return OkHttpClient.Builder()

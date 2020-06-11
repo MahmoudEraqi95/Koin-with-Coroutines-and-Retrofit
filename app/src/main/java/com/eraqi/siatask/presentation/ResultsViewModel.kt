@@ -19,12 +19,10 @@ import org.koin.core.KoinComponent
 class ResultsViewModel(var tag:String, var order:String, var sort:String, var pageSize:String) : ViewModel(), KoinComponent {
 
     val stackRepo = StackExchangeRepoImpl()
-
-
-
     var resultMutableLiveData:MutableLiveData<Result>
 
         init {
+
             resultMutableLiveData = MutableLiveData<Result>()
             getResults()
 

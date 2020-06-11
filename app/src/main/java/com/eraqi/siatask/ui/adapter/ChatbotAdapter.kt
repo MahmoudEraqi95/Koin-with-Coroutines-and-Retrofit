@@ -26,12 +26,15 @@ class ChatbotAdapter (var context:Context):RecyclerView.Adapter<ChatbotAdapter.C
     var question = ArrayList<String>()
 
     fun addQuestion(i:Int){
-            if (question.size<Constants.questions.size && i != question.size-1) {
+            if (validateAddingNewQuestion(i)) {
                 question.add(Constants.questions[i])
 
                 notifyItemInserted(i)
             }
 
+    }
+    fun validateAddingNewQuestion(i : Int):Boolean{
+        return (question.size<Constants.questions.size && i != question.size-1 && i<=Constants.questions.size)
     }
 
     override fun onCreateViewHolder(

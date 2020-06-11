@@ -2,13 +2,11 @@ package com.eraqi.siatask.domain.repo
 
 import com.eraqi.siatask.Result
 
-import com.eraqi.siatask.data.model.StackExchangeResponse
 import com.eraqi.siatask.data.remote.StackExcahngeApi
-import com.eraqi.siatask.data.repo.StackExhangeRepo
+import com.eraqi.siatask.data.repo.StackExchangeRepo
 
 import org.koin.core.KoinComponent
 import org.koin.core.get
-import java.io.IOError
 import java.io.IOException
 
 
@@ -16,7 +14,7 @@ import java.io.IOException
  * this class is responsible for fetching the data from the datasource which could be a local database or remote data
  * in our case it's remote data so it calls the api using retrofit and sends the data to the viewmodel class
  */
-class StackExchangeRepoImpl:StackExhangeRepo, KoinComponent {
+class StackExchangeRepoImpl:StackExchangeRepo, KoinComponent {
     override suspend fun searchRemote(
         tag: String,
         order: String,
